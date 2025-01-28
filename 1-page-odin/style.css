@@ -174,3 +174,23 @@ img {
 .size_section {
     width: 65%;
 }
+
+/* section 3 */
+
+.section3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box_signup {
+    background-color: #3883f6;
+    display: flex;
+    gap: 50px;
+    min-width: 80%;
+    padding: 50px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
