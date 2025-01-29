@@ -60,7 +60,7 @@ function playGame(){
         }
         const computerChoice = getComputerChoice("rock","paper","scissors")
         console.log("Round " + (i + 1) + ":")
-        console.log("Computer Choicer: " + computerChoice);
+        console.log("Computer Choice: " + computerChoice);
         console.log("Human Choice: " + humanChoice);
         const result = playRound(humanChoice,computerChoice)
         console.log("User Score: " + humanScore)
