@@ -8,33 +8,56 @@ function getComputerChoice(choice1,choice2,choice3){
 }
 
 function getHumanChoice(choice){
-    choice = prompt("Choose your option")
-    return choice
+    while (true) {
+        choice = prompt("Choose your option:\n1. Rock\n2. Paper\n3. Scissors");
+        if (choice  === null){
+            return null;
+        }else if (
+            choice === "1" || 
+            choice === "2" || 
+            choice === "3" ) {
+            break; 
+        } else {
+            alert("Invalid choice, please choose 1, 2, or 3")
+              
+        }
+    }
+    if (choice === "1") {
+        return "rock";
+    } else if (choice === "2") {
+        return "paper";
+    } else {
+        return "scissors";
+    }
 }
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-
+    
     if (humanChoice === computerChoice) {
         return "Tie";
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
         humanScore += 1
-        return "You win! Rock beats scissors.";
+        return "You win! rock beats scissors";
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         humanScore += 1
-        return "You win! Paper beats rock.";
+        return "You win! paper beats rock";
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         humanScore += 1
-        return "You win! Scissors beats paper.";
+        return "You win! scissors beats paper";
     } else {
         computerScore += 1
-        return "You lose!";
+        return "You lose";
     }
 }
 
 function playGame(){
+    
     for (let i = 0; i < 5; i++){
         const humanChoice = getHumanChoice()
+        if (humanChoice === null) {
+            console.log("Game was closed");
+            return;
+        }
         const computerChoice = getComputerChoice("rock","paper","scissors")
         console.log("Round " + (i + 1) + ":")
         console.log("Computer Choicer: " + computerChoice);
@@ -45,21 +68,15 @@ function playGame(){
         console.log(result)
         console.log("-----------------------------------")
         }
-
-        if (humanScore > computerScore) {
-            console.log("User win the game")
-        } else if (humanScore < computerScore) {
-            console.log("Computer win the game")
-        } else {
-            console.log("Both loosers")
-        }   
-} 
-
-
-
-
-
-playGame()
+        
+    if (humanScore > computerScore) {
+        console.log("User win the game")
+    } else if (humanScore < computerScore) {
+         console.log("Computer win the game")
+    } else {
+        console.log("Tie, Both loosers")
+    }   
+} playGame()
 
 
 
