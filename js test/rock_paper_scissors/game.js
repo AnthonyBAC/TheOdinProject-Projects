@@ -1,3 +1,6 @@
+let humanScore = 0
+let computerScore = 0
+
 function getComputerChoice(choice1,choice2,choice3){
     const random = Math.floor(Math.random() * 3);
     const choices = [choice1,choice2,choice3];
@@ -50,14 +53,13 @@ function playGame(){
         } else {
             console.log("Both loosers")
         }   
-} playGame()
-
-
-let humanScore = 0
-let computerScore = 0
+} 
 
 
 
+
+
+playGame()
 
 
 
